@@ -1,88 +1,326 @@
+/* GENERAL STYLES */
+/* Colors */
+:root {
+  --bg-black: rgb(0, 0, 0);
+  --bg-gold: #ecba5c;
+  --bg-blue: rgba(0, 0, 255, 0.726);
+  --bg-red: rgba(255, 0, 0, 0.7);
+  --bg-green: #1c9400;
+  --bg-purple: #6a0dad;
+  --bg-white: #f1f1f1;
+  --primary-blue: #0000ff;
+  --primary-red: #ff0000;
+  --primary-green: #1c9400;
+  --primary-gold: #ecba5c;
+  --primary-purple: #6a0dad;
+  --primary-white: #f1f1f1;
+}
+
+/* How the page deals with padding and margins */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the body */
 body {
-  font-family: Arial;
-  font-size: 120%;
+  background-color: var(--bg-black);
+  max-height: 93.5vh;
 }
 
-a {
-  color: #563d7c;
-  text-decoration: none;
-  transition: color 0.1s;
+/* SELECTOR CLASSES */
+/* Main Title */
+h1 {
+  justify-content: center;
+  padding-top: 2vh;
+  color: var(--primary-red);
 }
 
-a:hover {
-  color: #8570a5;
+/* Header */
+header {
+  min-height: 93.5vh;
+  background-color: var(--bg-black);
 }
 
+/* Buttons */
 button {
-  display: inline-block;
-  margin: 5px;
-  cursor: pointer;
-  font-size: 100%;
-  background-color: #563d7c;
-  border-radius: 5px;
-  padding: 2px 10px;
-  color: white;
-  border: 0;
-  transition: background-color 0.1s;
+  border-radius: 8px; /* Makes buttons rounded */
 }
 
-button:hover {
-  background-color: #8570a5;
+/* MORE SPECIFIC SELECTOR CLASSES */
+header p {
+  margin-top: 2vw;
 }
 
-.choices button {
-  display: block;
+/* UTILITY CLASSES */
+/* Flexbox */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-input[type="text"] {
-  font-size: 100%;
-}
-
-ol {
-  padding-left: 0px;
-  max-height: 400px;
-  overflow: auto;
-}
-
-li {
-  padding: 5px;
-  list-style: decimal inside none;
-}
-
-li:nth-child(odd) {
-  background-color: #f3edfc;
-}
-
-.wrapper {
-  margin: 100px auto 0 auto;
-  max-width: 600px;
-}
-
+/* Hide elements */
 .hide {
   display: none;
 }
 
-.start {
+/* PSEUDO CLASS UTILITY CLASSES */
+a:link {
+  text-decoration: none;
+}
+
+/* SITEWIDE CLASSES */
+/* Style the navigation container */
+nav.score-container {
+  justify-content: flex-start;
+  text-align: left;
+  padding: 1vw;
+  background-color: var(--bg-green);
+}
+/* Style the high scores navigation link */
+nav .scores {
+  color: var(--primary-gold);
+}
+
+/* Instructions */
+.instructions {
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  min-height: 60vh;
+  padding: 1vw 2vw;
+  font-size: 6vw;
+  color: var(--primary-white);
 }
 
-.scores {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+/* Start Instruction text */
+.start-text {
+  text-align: center;
+  font-size: 5vw;
+  margin-bottom: 2vh;
+  color: var(--primary-white);
 }
 
-.feedback {
-  font-style: italic;
-  font-size: 120%;
-  margin-top: 20px;
-  padding-top: 10px;
-  color: gray;
-  border-top: 2px solid #ccc;
+/* Start Button */
+.startBtn {
+  justify-content: center;
+  text-align: center;
+  font-size: 6vw;
+  flex: 1 25%; /* Expands the button the length of the screen */
+  color: var(--primary-blue);
+  background-color: var(--bg-green);
 }
 
-.timer {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+/* quiz box */
+.quiz-box {
+  min-height: 90vh;
+}
+
+/* timer */
+.time {
+  justify-content: center;
+  margin-left: 70%;
+  padding: 1.5vw;
+  font-size: 1.5vw;
+  text-align: center;
+  color: var(--primary-blue);
+  background-color: var(--bg-gold);
+}
+
+/* Quiz Title */
+.quiz-title {
+  justify-content: center;
+  font-size: 4vw;
+  color: var(--primary-white);
+}
+
+/* Question */
+.question-number {
+  font-size: 3vw;
+  color: var(--primary-red);
+}
+/* Question choice container */
+.questions {
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1 25%;
+  max-width: 100%;
+  min-height: 60vh;
+  margin-top: 2vw;
+  background-color: var(--bg-blue);
+}
+
+/* Question choice buttons */
+.choiceBtn {
+  background-color: var(--bg-green);
+  color: var(--primary-gold);
+  font-size: 2vw;
+  padding: 1vw;
+  margin: 0.5vh auto;
+}
+
+/* Explanation of why a question is right or wrong */
+.reason {
+  text-align: center;
+  font-size: 2vw;
+  color: var(--primary-white);
+}
+
+/* Final score */
+.finalScore {
+  justify-content: center;
+  padding: 2vw;
+  color: var(--primary-blue);
+  background-color: var(--bg-white);
+}
+
+/* Final score score (1 out of 4) */
+.finalScore span {
+  margin-left: 1vw;
+}
+
+/* Results Message */
+.resultsMessage {
+  text-align: center;
+  font-weight: bold;
+  margin: 0 auto 2vw auto;
+  padding: 1vw;
+  font-size: 1.3vw;
+  background-color: var(--primary-gold);
+}
+
+/* Keeps the label and input together */
+.playerForm {
+  margin: 3vw auto 2vw auto;
+}
+
+/* Initals */
+.initials {
+  font-weight: bolder;
+  background-color: var(--bg-red);
+}
+
+/* Submit initials button */
+.submit {
+  justify-content: center;
+  text-align: center;
+  flex: 1 25%;
+  margin: 2vw auto;
+  font-size: 6vw;
+  color: var(--primary-blue);
+  background-color: var(--bg-green);
+}
+
+/* High score title */
+.scoresTitle {
+  text-align: center;
+  padding: 1.5vw 0;
+  margin: 0 auto;
+  background-color: var(--bg-red);
+  color: var(--primary-blue);
+}
+
+/* Score List */
+.scoreList {
+  flex-direction: column;
+  align-items: center;
+  font-weight: bolder;
+  margin: 0 auto;
+  color: var(--primary-gold);
+  background-color: var(--bg-blue);
+}
+
+/* High Scores */
+.highscores {
+  padding: 1vw;
+  border: 3px solid #dadada;
+  margin: 2vw;
+}
+
+/* Restart quiz button */
+.restart {
+  justify-content: center;
+  text-align: center;
+  flex: 1 25%;
+  font-size: 6vw;
+  color: var(--primary-blue);
+  background-color: var(--bg-green);
+}
+
+/* Media Queries */
+/* For screens under 900px */
+@media screen and (min-width: 500px) {
+  /* Body */
+  body {
+    max-height: 100vh;
+  }
+
+  /* Header */
+  header {
+    max-height: 90vh;
+    overflow: hidden;
+  }
+
+  /* Main page title */
+  h1 {
+    margin-top: 1.5vh;
+    font-size: 2vw;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  /* Style the high scores navigation link when it is hovered */
+  nav .scores:hover {
+    color: var(--primary-blue);
+  }
+
+  /* Instructions */
+  .instructions {
+    font-size: 3vw;
+    max-height: 20vh;
+  }
+
+  /* Start Instruction Text */
+  .start-text {
+    font-size: 3vw;
+  }
+
+  /* Start Button */
+  .startBtn {
+    font-size: 4vw;
+    margin-bottom: 2vw;
+  }
+  /* Results Message */
+  .resultsMessage {
+    font-size: 2vw;
+  }
+
+  /* Score */
+  .finalScore {
+    font-size: 4vw;
+  }
+
+  /* Label */
+  .initials {
+    font-size: 3vw;
+  }
+
+  /* Input form */
+  .playerForm {
+    font-size: 3vw;
+  }
+
+  /* Score Button */
+  .submit {
+    font-size: 4vw;
+  }
+
+  /* Restart button */
+  .restart {
+    font-size: 4vw;
+  }
 }
