@@ -18,7 +18,7 @@ The quiz will keep track of your score as you progress through the quiz. Each co
 The quiz also has a timer that counts down from a specified time limit. When the timer runs out, the quiz will end and display your final score.
 
 ## Credits
-This code quiz was created by Renniel Pena.
+This code quiz was created by Discoveren.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
