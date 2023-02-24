@@ -2,22 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Highscores</title>
-
-    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>High Scores</title>
+    <!--LINKED CSS-->
+    <link rel="stylesheet" href="assets/style.css" />
   </head>
-
   <body>
-    <div class="wrapper">
-      <h1>Highscores</h1>
-      <ol id="highscores"></ol>
-
-      <a href="index.html"><button>Go Back</button></a>
-      <button id="clear">Clear Highscores</button>
-    </div>
-
-    <script src="./assets/js/scores.js"></script>
+    <div id="highscore"></div>
+    <h2 class="scoresTitle">High Scores</h2>
+    <ol class="flex scoreList" id="highScoreList"></ol>
+    
+    <nav class="restart-quiz">
+      <a href="index.html" class="flex">
+        <button type="button" class="restart">Restart Quiz</button>
+      </a>
+    </nav>
+    <script src="assets/js/scores.js"></script>
   </body>
 </html>
