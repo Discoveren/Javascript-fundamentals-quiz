@@ -1,48 +1,49 @@
 <!DOCTYPE html>
-<html lang="en-gb">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Coding Quiz</title>
+<html lang="en">
 
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
 
-  <body>
-    <div class="scores"><a href="highscores.html">View Highscores</a></div>
+<body>
+    <header>
+        <div class="highscores">
+            <h4 class="highscore-link" id="highscore-link">
+                View Highscores
+            </h4>
+        </div>
+        <div>
+            <h4 class="timer">
+                0 seconds remaining.
+            </h4>
+        </div>
+    </header>
 
-    <div class="timer">Time: <span id="time">0</span></div>
+    <main>
+        <div class="quiz" id="quiz">
+            <div class="question" id="question">
+                <h1 class="description" id="description">
+                    Coding Quiz Challenge
+                </h1>
+            </div>
+            <div class="choices" id="choices">
+                <h4 class="choiceDescription" id="choiceDescription">
+                    Try to answer the following code-related questions within the time limit. 
+                </h4>
+            </div>
+            <div class="startButton" id="startButton">
+                <button>
+                    Start Quiz
+                </button>
+            </div>
+        </div>
+    </main>
 
-    <div class="wrapper">
-      <div id="start-screen" class="start">
-        <h1>Coding Quiz Challenge</h1>
-        <p>
-          Try to answer the following code-related questions within the time
-          limit. Keep in mind that incorrect answers will penalize your
-          score/time by ten seconds!
-        </p>
-        <button id="start">Start Quiz</button>
-      </div>
+    <script src="./assets/js/index.js" type="module"></script>
+</body>
 
-      <div id="questions" class="hide">
-        <h2 id="question-title"></h2>
-        <div id="choices" class="choices"></div>
-      </div>
-
-      <div id="end-screen" class="hide">
-        <h2>All done!</h2>
-        <p>Your final score is <span id="final-score"></span>.</p>
-        <p>
-          Enter initials: <input type="text" id="initials" max="3" />
-          <button id="submit">Submit</button>
-        </p>
-      </div>
-
-      <div id="feedback" class="feedback hide"></div>
-    </div>
-
-    <script src="./assets/js/questions.js"></script>
-    <script src="./assets/js/logic.js"></script>
-  </body>
 </html>
